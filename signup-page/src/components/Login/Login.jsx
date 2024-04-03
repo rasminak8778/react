@@ -1,41 +1,82 @@
-import './login.module.css';
-import {useState} from 'react';
-// export default function Form() {
+import './login.css';
+import {useRef, useState} from 'react';
 const LoginForm =()=> {
 
-    const [isLogin,setIsLogin]= useState(true);
-    const email = document.getElementById("newEmail");
+    const [isLogin,setIsLogin] = useState(true);
+    const [error,setError] = useState(false);
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
+    
     const handleSubmit = () => {
-        alert('Successful')
-    }
-   
+        
+            const email = emailRef.current.value;
+            const password = passwordRef.current.value;
+            const storedPassword = localStorage.getItem(email);
+            
+            if (isLogin) {
+                if (password === storedPassword) {
+                    alert('Logged Successfully');
+                }
+                else {
+                    alert('Invalid Password');
+                    setError(true)
+                    
+                }
+                }
+            else{
+                if (storedPassword){
+                    alert('The Same Account id already existing!!!')
+                } 
+                else{
+                    localStorage.setItem(email, password);
+                    setError(false)
+                    alert('Successfully Created!!!')
+                    
+                }   
+            }    
+    }; 
+    
     return ( 
-        <div className="login-page"> 
-            <form className="modal-content animate" > 
+        <div className="login-page" > 
+        <div className="modal-content animate">
             <div className="h1">{isLogin ? 'Login' : 'Sign Up'}</div>
                 {!isLogin && <div><label className="label">Name</label><input className="input" type="text"></input></div>} 
                 <label className="label">Email</label> 
-                <input 
+                <input
                     className="input"
-                    type="email"
-                /> 
+                    type="email" 
+                    required="true"
+                    ref={emailRef}
+                />
                 <label className="label">Password</label> 
                 <input 
                     className="input"  
-                    type="password"
+                    required="true"
+                    type="password" ref={passwordRef} style={{outline:error &&'2px solid red'}}
                 />
-
                 <div >
-                    <button className="btn" onClick={()=>handleSubmit()}>{isLogin ? 'Login':'SignUp'}</button>
+                    <button className="btn" onClick={handleSubmit}>{isLogin ? 'Login':'SignUp'}</button>
                 </div>
                 <div>
-                    {isLogin && <div><p>Create new Account,clcik here</p><div className="clickHere" onClick={()=>setIsLogin()}>{!isLogin ? 'Login':'SignUp'}</div></div>}
-                    
+                    {isLogin ?  (
+                        <div>
+                            You can Create New Account!
+                            <button className="btn1" onClick={()=>setIsLogin(false)}>
+                                {!isLogin ? 'Login':'SignUp'}
+                            </button>
+                        </div>) :
+                        <div>
+                            Already Signed Up?
+                            <button className="btn1" onClick={()=>setIsLogin(true)}>   
+                                {!isLogin ? 'Login':'SignUp'}
+                            </button>
+                        </div>
+                        }
                 </div>
-            </form> 
+            </div>
         </div> 
         
     );
 };
-export {LoginForm}; 
-// } 
+export {LoginForm};  
+

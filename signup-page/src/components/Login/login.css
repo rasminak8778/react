@@ -1,0 +1,138 @@
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+.login-page {width: 450px;
+padding: 8% 0 0;
+margin: auto;
+}
+
+.h1 {
+  font-family: Arial, sans-serif;
+  font-size: 34px;
+  color: #131111;
+  font-style: normal;
+  padding: 10%;
+
+}
+.label { 
+  display: block; 
+  font-size: larger; 
+  color: rgb(19, 19, 19); 
+  padding: 5px; 
+} 
+.container{
+  display: block; 
+  padding: 10px; 
+  margin: 16px auto;
+  width:100px; 
+}
+.input { 
+  font-size: larger; 
+  padding: 5px; 
+  margin: 2px; 
+
+} 
+.btn { 
+  color: white; 
+  background-color: rgb(29, 58, 63); 
+  border-radius: 5px; 
+  font-size: larger; 
+  display: block; 
+  padding: 10px; 
+  margin: 16px auto;
+  width:100px; 
+} 
+.btn1 { 
+  
+  color: white; 
+  background-color: rgb(149, 189, 196); 
+  border-radius: 6px; 
+  font-size: small; 
+  display: block; 
+  padding: 8px; 
+  margin: 26px auto;
+  width:80px; 
+} 
+.clickHere{
+
+  color: red; 
+  height: 50px; 
+  padding: 6px;
+}
+.messages { 
+  display: flex; 
+  justify-content: center; 
+} 
+
+
+
+
+/* .modal-content {
+    background-color: #fefefe;
+    margin: 5px auto;
+    border: 1px solid #888;
+    width: 80%; 
+  }
+  .login-page {margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+    max-width: 20rem;
+    width: 90%;
+  }
+  .h1 {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #131111;
+    font-style: normal;
+  }
+  .h2 {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: #131111;
+    font-style: normal;
+  }
+  body {
+    background-color: #5e6290;
+  }
+  .App { 
+    text-align: center; 
+    background-color: #5e6290;
+  } 
+  
+  .label { 
+    display: block; 
+    font-size: larger; 
+    color: rgb(19, 19, 19); 
+    padding: 5px; 
+  } 
+  
+  .input { 
+    font-size: larger; 
+    padding: 5px; 
+    margin: 2px; 
+  
+  } 
+  .btn { 
+    color: white; 
+    background-color: rgb(238, 202, 202); 
+    border-radius: 5px; 
+    font-size: larger; 
+    display: block; 
+    padding: 10px; 
+    margin: 16px auto;
+    width:120px; 
+  } 
+  .btn1 {   
+    color: white; 
+    background-color: rgb(223, 121, 121); 
+    border-radius: 5px; 
+    font-size: larger; 
+    display: block; 
+    padding: 10px; 
+    margin: 16px auto;
+    width:120px; 
+  } 
+   */
