@@ -11,7 +11,7 @@ import TabButton from './component/TabButton.jsx';
 //outputting dynamic values reactDescriptions
 //or simply intialise and use it(eg:description) 
 //dynamically loading image
-//props:case 1(making component reusable)pass data to components via concept props[coreconceptprops],the data passed to component App by using props.
+//props:case 1(making component reusable)pass data to one components to another component via concept props[coreconceptprops],the data passed to component App by using props.
 //props:case2;by using a data.js file(all data stored) and import into this file [CORE_COCEPTS]making mode easy to pass data
 //props:case3;by using spread operator simply write the code
 //props:case5;<Button caption="My Button" /> export default function Button({ caption, type = "submit" }) { 

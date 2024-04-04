@@ -1,21 +1,24 @@
 import './login.css';
 import {useRef, useState} from 'react';
+import { useNavigate } from "react-router-dom";
+
 const LoginForm =()=> {
 
     const [isLogin,setIsLogin] = useState(true);
     const [error,setError] = useState(false);
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-    
+    const navigator = useNavigate();
+
     const handleSubmit = () => {
-        
             const email = emailRef.current.value;
             const password = passwordRef.current.value;
             const storedPassword = localStorage.getItem(email);
             
+            
             if (isLogin) {
                 if (password === storedPassword) {
-                    alert('Logged Successfully');
+                    navigator("/products");
                 }
                 else {
                     alert('Invalid Password');
@@ -30,7 +33,8 @@ const LoginForm =()=> {
                 else{
                     localStorage.setItem(email, password);
                     setError(false)
-                    alert('Successfully Created!!!')
+                    navigator("/products");
+                    
                     
                 }   
             }    
@@ -45,13 +49,13 @@ const LoginForm =()=> {
                 <input
                     className="input"
                     type="email" 
-                    required="true"
+                    required
                     ref={emailRef}
                 />
                 <label className="label">Password</label> 
                 <input 
                     className="input"  
-                    required="true"
+                    required    
                     type="password" ref={passwordRef} style={{outline:error &&'2px solid red'}}
                 />
                 <div >

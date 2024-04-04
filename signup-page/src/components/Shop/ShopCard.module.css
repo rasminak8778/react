@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 100px;
+    width: auto;
+    /* display: inline-block; */
+    position: relative;
+
+  }
+  
+  .cartItem {
+    width: 700px;
+    height: 250px;
+    display: flex;
+  
+    align-items: center;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    margin: 30px;
+  }
+  
+  .cartItemImg {
+    width: 250px;
+  }
+  
+  /* .cartItem .description {
+    width: 100%;
+    font-size: 30px;
+  } */
+  
+
+ 
+  .card p {
+    margin: 5px 0;
+  }
+  
