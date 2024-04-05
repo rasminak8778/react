@@ -2,25 +2,24 @@ import './App.css';
 import ProductCard from './components/Shop/ShopCart.jsx';
 import {LoginForm} from './components/Login/Login.jsx';
 import { useEffect, useState } from "react"; 
-import { Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router ,Routes, Route} from "react-router-dom";
 import { getProducts } from './utils.js';
+import ProductDetails from "./components/ProductDetails/Product.jsx";
+import { ShoppingCartContext, ShoppingCartProvider } from './context/ShoppingCartContext.jsx';
   
 function App() { 
-    const [data,setData] = useState([]);
-    useEffect(()=> {
-        getData();
-    },[])
-    const getData = async () => {
-        const data = await getProducts();
-        setData(data)
-    }
     return ( 
         <div className='App'>
-        <Routes>
-            <Route path="/" element={<LoginForm />} />
-            <Route path="/login" element={<LoginForm />} /> 
-            <Route path="/products" element={<ProductCard data={data}/>} />
-        </Routes>
+       {/* <ShoppingCartProvider> */}
+            <Routes>
+                <Route path="/" element={<LoginForm />} />
+                <Route path="/login" element={<LoginForm />} /> 
+                <Route path="/products" element={<ProductCard/>} />
+                <Route path="/products/:productId" element={<ProductDetails/>} />
+                
+            </Routes>
+        {/* </ShoppingCartProvider>  */}
+
         </div>     
     ); 
 } 
